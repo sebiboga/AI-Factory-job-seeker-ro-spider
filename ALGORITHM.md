@@ -408,6 +408,59 @@ Include ANOFM scraping (ANAF CIF filter) in the scraper.
 
 ---
 
+## Step 15 — Update the scrapers index
+
+After updating EPAM's Derived Scrapers list, also add the new scraper to the public index.
+
+```bash
+git clone https://github.com/sebiboga/job-seeker-ro-spider-scrapers.git /tmp/scrapers-index
+cd /tmp/scrapers-index
+```
+
+### 15.1 Add entry to `scrapers.json`
+
+Use `jq` to insert the new scraper object into the `scrapers` array:
+
+```bash
+jq '.scrapers += [{
+  "repo": "<REPO_NAME>",
+  "url": "https://github.com/sebiboga/<REPO_NAME>",
+  "description": "<LEGAL_NAME> (CIF: <CIF>)",
+  "cif": "<CIF>",
+  "legalName": "<LEGAL_NAME>",
+  "brand": "<BRAND>",
+  "careerUrl": "<CAREER_URL>",
+  "website": "<WEBSITE>",
+  "scrapingMethod": "<METHOD>",
+  "isTemplate": false,
+  "hasWorkflow": true,
+  "pagesUrl": "https://sebiboga.github.io/<REPO_NAME>/",
+  "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
+  "updatedAt": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
+}]' scrapers.json > scrapers.json.tmp && mv scrapers.json.tmp scrapers.json
+
+# Also update meta.lastUpdated
+jq '.meta.lastUpdated = "'$(date -u +%Y-%m-%d)'"' scrapers.json > scrapers.json.tmp && mv scrapers.json.tmp scrapers.json
+```
+
+### 15.2 Update `SCRAPERS.md`
+
+Add a new row to the markdown table at the top (same format as existing rows).
+
+### 15.3 Update `index.html`
+
+No changes needed — `index.html` loads dynamically from `scrapers.json`.
+
+### 15.4 Commit and push
+
+```bash
+git add -A
+git commit -m "feat: add <BRAND> scraper (CIF <CIF>)"
+git push
+```
+
+---
+
 ## Error handling (autonomous mode)
 
 | Situation | Action |
@@ -450,4 +503,5 @@ Before finishing, confirm:
 - [ ] `SOLR_AUTH` secret set on derived repo
 - [ ] CI workflow triggered and green
 - [ ] EPAM template's Derived Scrapers table updated
+- [ ] Scrapers index updated (`job-seeker-ro-spider-scrapers`)
 - [ ] No EPAM brand strings remain in derived repo
