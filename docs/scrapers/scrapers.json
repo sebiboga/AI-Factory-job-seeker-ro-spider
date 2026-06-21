@@ -281,20 +281,20 @@
       "updatedAt": "2026-06-21T06:40:28Z"
     },
     {
-      "repo": "yardi-call-center-srl-nodejs-scraper",
-      "url": "https://github.com/sebiboga/yardi-call-center-srl-nodejs-scraper",
-      "description": "YARDI CALL CENTER SRL (CIF: 32509291)",
-      "cif": "32509291",
-      "legalName": "YARDI CALL CENTER SRL",
-      "brand": "Yardi",
-      "careerUrl": "https://yardiromania.breezy.hr",
-      "website": "https://www.yardi.com",
-      "scrapingMethod": "Breezy JSON API (JSON fetch)",
+      "repo": "principal33-srl-nodejs-scraper",
+      "url": "https://github.com/sebiboga/principal33-srl-nodejs-scraper",
+      "description": "PRINCIPAL33 S.R.L. (CIF: 42574513)",
+      "cif": "42574513",
+      "legalName": "PRINCIPAL33 S.R.L.",
+      "brand": "principal33",
+      "careerUrl": "https://principal33.jobs.personio.de",
+      "website": "https://www.principal33.com",
+      "scrapingMethod": "Personio JSON API",
       "isTemplate": false,
       "hasWorkflow": true,
-      "pagesUrl": "https://sebiboga.github.io/yardi-call-center-srl-nodejs-scraper/",
+      "pagesUrl": "https://sebiboga.github.io/principal33-srl-nodejs-scraper/",
       "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
-      "updatedAt": "2026-06-21T06:40:28Z"
+      "updatedAt": "2026-06-21T07:33:32Z"
     }
   ]
 }
