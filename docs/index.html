@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Factory — job_seeker_ro_spider</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0d1117; color: #e6edf3; line-height: 1.5; padding: 2rem 1rem;
+}
+.container { max-width: 700px; margin: 0 auto; text-align: center; }
+h1 { font-size: 2rem; margin-bottom: .5rem; }
+h1 span { color: #58a6ff; }
+p.sub { color: #8b949e; margin-bottom: 2.5rem; font-size: 1rem; }
+.cards { display: grid; gap: 1rem; text-align: left; }
+.card {
+  background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+  padding: 1.25rem;
+}
+.card h2 { font-size: 1rem; margin-bottom: .5rem; }
+.card p { color: #8b949e; font-size: .85rem; margin-bottom: .5rem; }
+.card a { color: #58a6ff; text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+.badge {
+  display: inline-block; padding: 0 8px; font-size: .75rem; font-weight: 600;
+  border-radius: 10px; line-height: 1.8; background: #1a3a2a; color: #3fb950;
+}
+.footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #21262d;
+  font-size: .8rem; color: #484f58; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1><span>AI Factory</span> — job_seeker_ro_spider</h1>
+  <p class="sub">Autonomous scraper factory for Romanian companies on peviitor.ro</p>
+
+  <div class="cards">
+    <div class="card">
+      <h2>Trigger a new derivation</h2>
+      <p>Go to <strong>Actions → AI Factory → Run workflow</strong>, enter a company name, and the AI does the rest.</p>
+      <a href="https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider/actions">Launch workflow ↗</a>
+    </div>
+
+    <div class="card">
+      <h2>Scrapers index</h2>
+      <p>All 12 scrapers created so far, with CIF, brand, career URLs, and GitHub Pages links.</p>
+      <a href="https://sebiboga.github.io/job-seeker-ro-spider-scrapers/">Browse index ↗</a>
+    </div>
+
+    <div class="card">
+      <h2>EPAM template</h2>
+      <p>The reference implementation every scraper derives from.</p>
+      <a href="https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper">View template ↗</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider">AI-Factory-job-seeker-ro-spider</a>
+    &middot; <span id="year"></span>
+  </div>
+</div>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
