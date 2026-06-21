@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>job_seeker_ro_spider — Scrapers Index</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0d1117; color: #e6edf3; line-height: 1.5; padding: 2rem 1rem;
+}
+.container { max-width: 960px; margin: 0 auto; }
+h1 { font-size: 1.6rem; margin-bottom: .3rem; }
+h1 span { color: #58a6ff; }
+p.sub { color: #8b949e; margin-bottom: 2rem; font-size: .9rem; }
+a { color: #58a6ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.meta {
+  background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+  padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: .85rem;
+}
+.meta strong { color: #e6edf3; }
+.meta span { color: #8b949e; }
+table {
+  width: 100%; border-collapse: collapse; font-size: .85rem;
+}
+th {
+  text-align: left; padding: .6rem .75rem; border-bottom: 2px solid #30363d;
+  color: #8b949e; font-weight: 600; white-space: nowrap;
+}
+td {
+  padding: .55rem .75rem; border-bottom: 1px solid #21262d;
+}
+tr:hover td { background: #161b22; }
+.badge {
+  display: inline-block; padding: 0 6px; font-size: .7rem; font-weight: 600;
+  border-radius: 10px; line-height: 1.7;
+}
+.badge-green { background: #1a3a2a; color: #3fb950; }
+.badge-blue { background: #1c2c47; color: #58a6ff; }
+.count { font-size: .8rem; color: #8b949e; margin-top: 1.5rem; }
+.footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #21262d;
+  font-size: .8rem; color: #484f58; }
+.footer a { color: #484f58; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1><span>job_seeker_ro_spider</span> — Scrapers Index</h1>
+<p class="sub">Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro</p>
+
+<div class="meta">
+  <strong>Template sursă:</strong>
+  <a href="https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper">
+    epam-systems-international-srl-nodejs-scraper
+  </a>
+  <span>(CIF 33159615 · EPAM)</span>
+  <br>
+  <strong>AI Factory:</strong>
+  <a href="https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider">
+    AI-Factory-job-seeker-ro-spider
+  </a>
+  <br>
+  <strong>Date JSON:</strong>
+  <a href="scrapers.json">scrapers.json</a>
+  <span>·</span>
+  <strong>Markdown:</strong>
+  <a href="SCRAPERS.md">SCRAPERS.md</a>
+</div>
+
+<table id="scrapers-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Brand</th>
+      <th>Companie</th>
+      <th>CIF</th>
+      <th>Metodă</th>
+      <th>Repo</th>
+      <th>Pages</th>
+    </tr>
+  </thead>
+  <tbody id="scrapers-body"></tbody>
+</table>
+
+<div class="footer">
+  <a href="https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider">AI-Factory-job-seeker-ro-spider</a>
+  &middot; Actualizat <span id="updated-date"></span>
+</div>
+
+</div>
+<script>
+fetch('scrapers.json')
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(data => {
+    document.getElementById('updated-date').textContent = data.meta.lastUpdated;
+
+    const tbody = document.getElementById('scrapers-body');
+    data.scrapers.forEach((s, i) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${i + 1}</td>
+        <td><strong>${s.brand}</strong></td>
+        <td>${s.legalName}</td>
+        <td><span class="badge badge-blue">${s.cif}</span></td>
+        <td>${s.scrapingMethod}</td>
+        <td><a href="${s.url}" target="_blank">repo</a></td>
+        <td><a href="${s.pagesUrl}" target="_blank">pages</a></td>
+      `;
+      tbody.appendChild(tr);
+    });
+  })
+  .catch(() => {
+    document.getElementById('scrapers-body').innerHTML =
+      '<tr><td colspan="7" style="color:#8b949e;text-align:center;padding:2rem">Failed to load. <a href="scrapers.json" style="color:#58a6ff">View scrapers.json directly</a></td></tr>';
+  });
+</script>
+</body>
+</html>

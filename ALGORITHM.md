@@ -412,14 +412,9 @@ Include ANOFM scraping (ANAF CIF filter) in the scraper.
 
 After updating EPAM's Derived Scrapers list, also add the new scraper to the public index.
 
-```bash
-git clone https://github.com/sebiboga/job-seeker-ro-spider-scrapers.git /tmp/scrapers-index
-cd /tmp/scrapers-index
-```
+The scrapers index lives in the AI-Factory repo itself under `docs/scrapers/` (served via GitHub Pages).
 
-### 15.1 Add entry to `scrapers.json`
-
-Use `jq` to insert the new scraper object into the `scrapers` array:
+### 15.1 Add entry to `docs/scrapers/scrapers.json`
 
 ```bash
 jq '.scrapers += [{
@@ -437,26 +432,27 @@ jq '.scrapers += [{
   "pagesUrl": "https://sebiboga.github.io/<REPO_NAME>/",
   "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
   "updatedAt": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
-}]' scrapers.json > scrapers.json.tmp && mv scrapers.json.tmp scrapers.json
+}]' docs/scrapers/scrapers.json > docs/scrapers/scrapers.json.tmp && mv docs/scrapers/scrapers.json.tmp docs/scrapers/scrapers.json
 
 # Also update meta.lastUpdated
-jq '.meta.lastUpdated = "'$(date -u +%Y-%m-%d)'"' scrapers.json > scrapers.json.tmp && mv scrapers.json.tmp scrapers.json
+jq '.meta.lastUpdated = "'$(date -u +%Y-%m-%d)'"' docs/scrapers/scrapers.json > docs/scrapers/scrapers.json.tmp && mv docs/scrapers/scrapers.json.tmp docs/scrapers/scrapers.json
 ```
 
-### 15.2 Update `SCRAPERS.md`
+### 15.2 Update `docs/scrapers/SCRAPERS.md`
 
 Add a new row to the markdown table at the top (same format as existing rows).
 
-### 15.3 Update `index.html`
+### 15.3 Update `docs/scrapers/index.html`
 
 No changes needed — `index.html` loads dynamically from `scrapers.json`.
 
 ### 15.4 Commit and push
 
 ```bash
+cd /home/runner/work/AI-Factory-job-seeker-ro-spider/AI-Factory-job-seeker-ro-spider
 git add -A
 git commit -m "feat: add <BRAND> scraper (CIF <CIF>)"
-git push
+git pull origin main --rebase -X theirs && git push
 ```
 
 ---
@@ -503,5 +499,5 @@ Before finishing, confirm:
 - [ ] `SOLR_AUTH` secret set on derived repo
 - [ ] CI workflow triggered and green
 - [ ] EPAM template's Derived Scrapers table updated
-- [ ] Scrapers index updated (`job-seeker-ro-spider-scrapers`)
+- [ ] Scrapers index updated (`docs/scrapers/scrapers.json`)
 - [ ] No EPAM brand strings remain in derived repo
