@@ -279,6 +279,22 @@
       "pagesUrl": "https://sebiboga.github.io/cybertech-srl-nodejs-scraper/",
       "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
       "updatedAt": "2026-06-21T06:40:28Z"
+    },
+    {
+      "repo": "axon-soft-srl-nodejs-scraper",
+      "url": "https://github.com/sebiboga/axon-soft-srl-nodejs-scraper",
+      "description": "AXON SOFT SRL (CIF: 13049596)",
+      "cif": "13049596",
+      "legalName": "AXON SOFT SRL",
+      "brand": "Axon Soft",
+      "careerUrl": "https://axon-soft.com/careers/",
+      "website": "https://axon-soft.com",
+      "scrapingMethod": "WordPress HTML (cheerio)",
+      "isTemplate": false,
+      "hasWorkflow": true,
+      "pagesUrl": "https://sebiboga.github.io/axon-soft-srl-nodejs-scraper/",
+      "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
+      "updatedAt": "2026-06-21T07:25:22Z"
     }
   ]
 }

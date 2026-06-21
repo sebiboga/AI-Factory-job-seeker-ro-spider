@@ -15,6 +15,7 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 | 1 | **Utilben** | UTILBEN SRL | 18643343 | API JSON | [↗](https://github.com/sebiboga/utilben-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/utilben-srl-nodejs-scraper/) |
 | 2 | **AD/01** | Ahold Delhaize Technologies SRL | 49544242 | HTML/cheerio | [↗](https://github.com/sebiboga/ahold-delhaize-technologies-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/ahold-delhaize-technologies-srl-nodejs-scraper/) |
 | 3 | **ARTSOFT CONSULT** | ArtSoft Consult SRL | 15997630 | HTML/cheerio | [↗](https://github.com/sebiboga/artsoft-consult-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/artsoft-consult-srl-nodejs-scraper/) |
+|   | **Axon Soft** | AXON SOFT SRL | 13049596 | WordPress HTML (cheerio) | [↗](https://github.com/sebiboga/axon-soft-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/axon-soft-srl-nodejs-scraper/) |
 | 3 | **COERA** | COERA BC SRL | 32519996 | HTML/cheerio | [↗](https://github.com/sebiboga/coera-bc-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/coera-bc-srl-nodejs-scraper/) |
 | 4 | **Continental Hotels** | CONTINENTAL HOTELS SA | 1559737 | POST AJAX → HTML | [↗](https://github.com/sebiboga/continental-hotels-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/continental-hotels-srl-nodejs-scraper/) |
 | 5 | **EMERSON** | EMERSON SRL | 18284762 | Oracle Cloud HCM API | [↗](https://github.com/sebiboga/emerson-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/emerson-srl-nodejs-scraper/) |
@@ -29,7 +30,7 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 | 15 | **CONNATIX** | CONNATIX NATIVE EXCHANGE ROMANIA SRL | 35861771 | Greenhouse API (JSON fetch) | [↗](https://github.com/sebiboga/connatix-native-exchange-romania-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/connatix-native-exchange-romania-srl-nodejs-scraper/) |
 | 16 | **Cybertech** | CYBERTECH SRL | 12463238 | ANOFM API | [↗](https://github.com/sebiboga/cybertech-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/cybertech-srl-nodejs-scraper/) |
 
-**Total derivate active: 16** (15 create din template cu badge "Generated from EPAM" + 1 pre-exista configurat manual)
+**Total derivate active: 17** (15 create din template cu badge "Generated from EPAM" + 1 pre-exista configurat manual)
 
 ---
 
