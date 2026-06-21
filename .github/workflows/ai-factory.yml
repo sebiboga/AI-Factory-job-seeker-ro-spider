@@ -18,7 +18,7 @@ permissions:
 jobs:
   derive:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       SOLR_AUTH: ${{ secrets.SOLR_AUTH }}
@@ -76,6 +76,7 @@ jobs:
         run: gh auth status
 
       - name: Run OpenCode — autonomous derivation
+        timeout-minutes: 25
         env:
           COMPANY_NAME: ${{ inputs.company }}
           COMPANY_CIF: ${{ inputs.cif }}
