@@ -1,0 +1,102 @@
+name: AI Factory — Autonomous Scraper Derivation
+
+on:
+  workflow_dispatch:
+    inputs:
+      company:
+        description: Company name or brand (e.g. GAMINVEST, TEC Agency)
+        required: true
+        type: string
+      cif:
+        description: CIF if already known (optional — AI will search ANAF)
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  derive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      SOLR_AUTH: ${{ secrets.SOLR_AUTH }}
+      COMPANY_NAME: ${{ inputs.company }}
+      COMPANY_CIF: ${{ inputs.cif }}
+
+    steps:
+      - name: Checkout AI Factory repo
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Chrome
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub \
+            | sudo gpg --dearmor -o /etc/apt/keyrings/google-chrome.gpg
+          echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg]" \
+            "http://dl.google.com/linux/chrome/deb/ stable main" \
+            | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq google-chrome-stable
+
+      - name: Start Chrome with remote debugging
+        run: |
+          google-chrome --remote-debugging-port=9222 --headless --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu &
+          sleep 3
+
+      - name: Install OpenCode CLI
+        run: npm install -g opencode-ai
+
+      - name: Configure opencode.json
+        run: |
+          cat > opencode.json << 'OPNCFG'
+          {
+            "$schema": "https://opencode.ai/config.json",
+            "model": "opencode/big-pickle",
+            "instructions": ["ALGORITHM.md"],
+            "mcp": {
+              "chrome-devtools": {
+                "type": "local",
+                "command": ["npx", "-y", "chrome-devtools-mcp@latest", "--browser-url=http://127.0.0.1:9222"]
+              },
+              "external-directory": {
+                "type": "local",
+                "command": ["npx", "-y", "external-directory-mcp@latest"]
+              }
+            }
+          }
+          OPNCFG
+
+      - name: Verify gh auth
+        run: gh auth status
+
+      - name: Run OpenCode — autonomous derivation
+        env:
+          COMPANY_NAME: ${{ inputs.company }}
+          COMPANY_CIF: ${{ inputs.cif }}
+        run: |
+          PROMPT="Execute the derivation algorithm for the Romanian company: ${COMPANY_NAME}. "
+          if [ -n "${COMPANY_CIF}" ]; then
+            PROMPT+="The CIF is: ${COMPANY_CIF}. "
+          fi
+          PROMPT+="Read ALGORITHM.md for the complete algorithm. "
+          PROMPT+="All steps must be executed autonomously — no user interaction is allowed. "
+          PROMPT+="When in doubt, proceed with the safest action for production."
+
+          opencode run "$PROMPT" \
+            --dangerously-skip-permissions \
+            --print-logs
+
+      - name: Commit any algorithm updates
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git remote set-url origin https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: update algorithm with new derivation context"
+          git push
