@@ -9,6 +9,22 @@
   },
   "scrapers": [
     {
+      "repo": "utilben-srl-nodejs-scraper",
+      "url": "https://github.com/sebiboga/utilben-srl-nodejs-scraper",
+      "description": "UTILBEN SRL (CIF: 18643343)",
+      "cif": "18643343",
+      "legalName": "UTILBEN SRL",
+      "brand": "Utilben",
+      "careerUrl": "https://www.utilben.ro/careers",
+      "website": "https://www.utilben.ro",
+      "scrapingMethod": "API JSON",
+      "isTemplate": false,
+      "hasWorkflow": true,
+      "pagesUrl": "https://sebiboga.github.io/utilben-srl-nodejs-scraper/",
+      "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
+      "updatedAt": "2026-06-21T06:12:28Z"
+    },
+    {
       "repo": "epam-systems-international-srl-nodejs-scraper",
       "url": "https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper",
       "description": "Template — EPAM Systems International SRL",
