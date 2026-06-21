@@ -263,6 +263,22 @@
       "pagesUrl": "https://sebiboga.github.io/connatix-native-exchange-romania-srl-nodejs-scraper/",
       "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
       "updatedAt": "2026-06-21T06:12:28Z"
+    },
+    {
+      "repo": "cybertech-srl-nodejs-scraper",
+      "url": "https://github.com/sebiboga/cybertech-srl-nodejs-scraper",
+      "description": "CYBERTECH SRL (CIF: 12463238)",
+      "cif": "12463238",
+      "legalName": "CYBERTECH SRL",
+      "brand": "Cybertech",
+      "careerUrl": "https://cybertech.ro",
+      "website": "https://cybertech.ro",
+      "scrapingMethod": "ANOFM API",
+      "isTemplate": false,
+      "hasWorkflow": true,
+      "pagesUrl": "https://sebiboga.github.io/cybertech-srl-nodejs-scraper/",
+      "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
+      "updatedAt": "2026-06-21T06:40:28Z"
     }
   ]
 }
