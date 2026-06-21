@@ -99,5 +99,9 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git remote set-url origin https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
           git add -A
-          git diff --staged --quiet || git commit -m "chore: update algorithm with new derivation context"
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update algorithm with new derivation context"
+            git pull origin main --rebase -X theirs && git push
+          else
+            echo "No changes to commit"
+          fi
