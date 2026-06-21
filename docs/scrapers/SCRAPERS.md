@@ -29,6 +29,7 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 | 13 | **FARMEC** | FARMEC SA | 199150 | HTML/cheerio + eJobs | [↗](https://github.com/sebiboga/farmec-sa-nodejs-scraper) | [↗](https://sebiboga.github.io/farmec-sa-nodejs-scraper/) |
 | 15 | **CONNATIX** | CONNATIX NATIVE EXCHANGE ROMANIA SRL | 35861771 | Greenhouse API (JSON fetch) | [↗](https://github.com/sebiboga/connatix-native-exchange-romania-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/connatix-native-exchange-romania-srl-nodejs-scraper/) |
 | 16 | **Cybertech** | CYBERTECH SRL | 12463238 | ANOFM API | [↗](https://github.com/sebiboga/cybertech-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/cybertech-srl-nodejs-scraper/) |
+| 17 | **Yardi** | YARDI CALL CENTER SRL | 32509291 | Breezy JSON API (JSON fetch) | [↗](https://github.com/sebiboga/yardi-call-center-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/yardi-call-center-srl-nodejs-scraper/) |
 
 **Total derivate active: 17** (15 create din template cu badge "Generated from EPAM" + 1 pre-exista configurat manual)
 

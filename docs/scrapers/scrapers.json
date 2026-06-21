@@ -281,20 +281,20 @@
       "updatedAt": "2026-06-21T06:40:28Z"
     },
     {
-      "repo": "axon-soft-srl-nodejs-scraper",
-      "url": "https://github.com/sebiboga/axon-soft-srl-nodejs-scraper",
-      "description": "AXON SOFT SRL (CIF: 13049596)",
-      "cif": "13049596",
-      "legalName": "AXON SOFT SRL",
-      "brand": "Axon Soft",
-      "careerUrl": "https://axon-soft.com/careers/",
-      "website": "https://axon-soft.com",
-      "scrapingMethod": "WordPress HTML (cheerio)",
+      "repo": "yardi-call-center-srl-nodejs-scraper",
+      "url": "https://github.com/sebiboga/yardi-call-center-srl-nodejs-scraper",
+      "description": "YARDI CALL CENTER SRL (CIF: 32509291)",
+      "cif": "32509291",
+      "legalName": "YARDI CALL CENTER SRL",
+      "brand": "Yardi",
+      "careerUrl": "https://yardiromania.breezy.hr",
+      "website": "https://www.yardi.com",
+      "scrapingMethod": "Breezy JSON API (JSON fetch)",
       "isTemplate": false,
       "hasWorkflow": true,
-      "pagesUrl": "https://sebiboga.github.io/axon-soft-srl-nodejs-scraper/",
+      "pagesUrl": "https://sebiboga.github.io/yardi-call-center-srl-nodejs-scraper/",
       "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
-      "updatedAt": "2026-06-21T07:25:22Z"
+      "updatedAt": "2026-06-21T06:40:28Z"
     }
   ]
 }
