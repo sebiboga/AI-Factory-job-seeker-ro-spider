@@ -5,9 +5,26 @@
     "templateRepo": "https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper",
     "templateCif": "33159615",
     "factoryRepo": "https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider",
-    "lastUpdated": "2026-06-21"
+    "lastUpdated": "2026-06-22"
   },
   "scrapers": [
+    {
+      "repo": "metro-cash-carry-romania-srl-nodejs-scraper",
+      "url": "https://github.com/sebiboga/metro-cash-carry-romania-srl-nodejs-scraper",
+      "description": "METRO CASH & CARRY ROMANIA SRL (CIF: 8119423)",
+      "cif": "8119423",
+      "legalName": "METRO CASH & CARRY ROMANIA SRL",
+      "brand": "METRO",
+      "careerUrl": "https://cariere.metro.ro/jobs",
+      "website": "https://www.metro.ro",
+      "scrapingMethod": "HTML/cheerio",
+      "isTemplate": false,
+      "hasWorkflow": true,
+      "pagesUrl": "https://sebiboga.github.io/metro-cash-carry-romania-srl-nodejs-scraper/",
+      "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
+      "updatedAt": "2026-06-22T00:00:00Z"
+    },
+
     {
       "repo": "utilben-srl-nodejs-scraper",
       "url": "https://github.com/sebiboga/utilben-srl-nodejs-scraper",
