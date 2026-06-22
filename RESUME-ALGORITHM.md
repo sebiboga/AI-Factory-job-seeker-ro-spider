@@ -51,8 +51,8 @@ Same as the main ALGORITHM.md environment:
 ### 0.1 Clone the target repo
 
 ```bash
-git clone https://github.com/sebiboga/$REPO_NAME.git /tmp/$REPO_NAME
-cd /tmp/$REPO_NAME
+git clone https://github.com/sebiboga/$REPO_NAME.git ./$REPO_NAME
+cd ./$REPO_NAME
 ```
 
 ### 0.2 Determine what state the repo is in
@@ -137,7 +137,7 @@ Execute each check. If the check FAILS, execute the corresponding fix step.
 
 **Check:**
 ```bash
-test -f /tmp/$REPO_NAME/company.json && echo "EXISTS" || echo "CLEAN"
+test -f ./$REPO_NAME/company.json && echo "EXISTS" || echo "CLEAN"
 ```
 
 **Fix if EXISTS:** `rm -f company.json`
@@ -146,7 +146,7 @@ test -f /tmp/$REPO_NAME/company.json && echo "EXISTS" || echo "CLEAN"
 
 **Check:**
 ```bash
-test -f /tmp/$REPO_NAME/docs/jobs.md && echo "EXISTS" || echo "CLEAN"
+test -f ./$REPO_NAME/docs/jobs.md && echo "EXISTS" || echo "CLEAN"
 ```
 
 **Fix if EXISTS:** `rm -f docs/jobs.md`
@@ -155,7 +155,7 @@ test -f /tmp/$REPO_NAME/docs/jobs.md && echo "EXISTS" || echo "CLEAN"
 
 **Check:**
 ```bash
-test -f /tmp/$REPO_NAME/AI-DERIVATION-GUIDE.md && echo "EXISTS" || echo "CLEAN"
+test -f ./$REPO_NAME/AI-DERIVATION-GUIDE.md && echo "EXISTS" || echo "CLEAN"
 ```
 
 **Fix if EXISTS:** `rm -f AI-DERIVATION-GUIDE.md`
@@ -164,7 +164,7 @@ test -f /tmp/$REPO_NAME/AI-DERIVATION-GUIDE.md && echo "EXISTS" || echo "CLEAN"
 
 **Check:**
 ```bash
-CIF_IN_CONFIG=$(jq -r '.cif // ""' /tmp/$REPO_NAME/config/company.json 2>/dev/null)
+CIF_IN_CONFIG=$(jq -r '.cif // ""' ./$REPO_NAME/config/company.json 2>/dev/null)
 if [ "$CIF_IN_CONFIG" = "$TARGET_CIF" ] && [ -n "$CIF_IN_CONFIG" ]; then
   echo "CORRECT"
 else
@@ -193,7 +193,7 @@ Also overwrite `docs/company.json` with the same content.
 
 **Check:**
 ```bash
-grep -q "EPAM\|epam\.com\|epam-systems" /tmp/$REPO_NAME/index.js && echo "HAS_EPAM" || echo "CUSTOMIZED"
+grep -q "EPAM\|epam\.com\|epam-systems" ./$REPO_NAME/index.js && echo "HAS_EPAM" || echo "CUSTOMIZED"
 ```
 
 **Fix if HAS_EPAM:** Rewrite the scraper logic (`fetchJobs*()`, `parse*Jobs()`) for the target company's career site. Use Chrome DevTools to inspect the career page and determine the correct selectors or API endpoints. Follow Step 7 of ALGORITHM.md.
@@ -203,8 +203,8 @@ grep -q "EPAM\|epam\.com\|epam-systems" /tmp/$REPO_NAME/index.js && echo "HAS_EP
 **Check each test file for EPAM references:**
 
 ```bash
-grep -rl "EPAM\|epam-systems" /tmp/$REPO_NAME/tests/ --include="*.js" 2>/dev/null || echo "ALL_CLEAN"
-test -f /tmp/$REPO_NAME/tests/validate-epam-jobs.js && echo "NEEDS_RENAME" || echo "ALREADY_RENAMED"
+grep -rl "EPAM\|epam-systems" ./$REPO_NAME/tests/ --include="*.js" 2>/dev/null || echo "ALL_CLEAN"
+test -f ./$REPO_NAME/tests/validate-epam-jobs.js && echo "NEEDS_RENAME" || echo "ALREADY_RENAMED"
 ```
 
 **Fix:** Follow Step 8 of ALGORITHM.md for each test file:
@@ -221,7 +221,7 @@ test -f /tmp/$REPO_NAME/tests/validate-epam-jobs.js && echo "NEEDS_RENAME" || ec
 
 **Check:**
 ```bash
-grep -rl "EPAM\|epam-systems-international" /tmp/$REPO_NAME --include="*.md" --include="*.html" --include="*.json" \
+grep -rl "EPAM\|epam-systems-international" ./$REPO_NAME --include="*.md" --include="*.html" --include="*.json" \
   --exclude="node_modules" --exclude="package-lock.json" 2>/dev/null \
   | grep -v "CHANGELOG.md" | grep -v "Generated from" || echo "ALL_CLEAN"
 ```
@@ -243,11 +243,11 @@ grep -rl "EPAM\|epam-systems-international" /tmp/$REPO_NAME --include="*.md" --i
 
 **Check:**
 ```bash
-test -f /tmp/$REPO_NAME/.github/workflows/job-seeker-ro-spider.yml && echo "EXISTS" || echo "MISSING"
+test -f ./$REPO_NAME/.github/workflows/job-seeker-ro-spider.yml && echo "EXISTS" || echo "MISSING"
 # Check that "Sync with remote" comes before "Install dependencies"
-grep -q "Sync with remote" /tmp/$REPO_NAME/.github/workflows/job-seeker-ro-spider.yml && echo "HAS_SYNC" || echo "NO_SYNC"
+grep -q "Sync with remote" ./$REPO_NAME/.github/workflows/job-seeker-ro-spider.yml && echo "HAS_SYNC" || echo "NO_SYNC"
 # Check no EPAM references in workflow labels
-grep -q "EPAM SYSTEMS\|EPAM Careers" /tmp/$REPO_NAME/.github/workflows/*.yml && echo "HAS_EPAM_LABEL" || echo "CLEAN"
+grep -q "EPAM SYSTEMS\|EPAM Careers" ./$REPO_NAME/.github/workflows/*.yml && echo "HAS_EPAM_LABEL" || echo "CLEAN"
 ```
 
 **Fix if MISSING:** Ensure `.github/workflows/job-seeker-ro-spider.yml` exists with correct ordering. Create it if missing (copy structure from EPAM template, adjusting for new company).
@@ -298,7 +298,7 @@ echo "$BADGE" | grep -q "epam-systems" && echo "BADGE_OK" || echo "BADGE_MISSING
 ## Step 4 — Commit and push any fixes
 
 ```bash
-cd /tmp/$REPO_NAME
+cd ./$REPO_NAME
 git add -A
 if ! git diff --staged --quiet; then
   git commit -m "fix: resume derivation — complete missing steps for <BRAND> scraper
@@ -331,8 +331,8 @@ If CI fails, read the error, fix, commit, and re-trigger. Maximum 3 fix attempts
 ## Step 6 — Update EPAM template's Derived Scrapers list
 
 ```bash
-git clone https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper.git /tmp/epam-template
-cd /tmp/epam-template
+git clone https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper.git ./epam-template
+cd ./epam-template
 ```
 
 Check if the repo is already in the Derived Scrapers table. If not, add a row:
@@ -353,7 +353,7 @@ git push
 
 Navigate back to the AI Factory repo:
 ```bash
-cd /home/runner/work/AI-Factory-job-seeker-ro-spider/AI-Factory-job-seeker-ro-spider
+cd ..
 ```
 
 ### 7.1 Check if repo already exists in `docs/scrapers/scrapers.json`
