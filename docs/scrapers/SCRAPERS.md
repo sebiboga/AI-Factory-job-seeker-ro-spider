@@ -4,7 +4,7 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 
 **Template sursă:** [epam-systems-international-srl-nodejs-scraper](https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper) (CIF: 33159615, brand: EPAM)  
 **AI Factory:** [AI-Factory-job-seeker-ro-spider](https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider)  
-**Ultima actualizare:** 2026-06-21
+**Ultima actualizare:** 2026-06-22
 
 ---
 
@@ -28,6 +28,7 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 | 12 | **TEC Agency** | TEC SOFTWARE SOLUTIONS SRL | 32971419 | HTML/cheerio | [↗](https://github.com/sebiboga/tec-software-solutions-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/tec-software-solutions-srl-nodejs-scraper/) |
 | 13 | **FARMEC** | FARMEC SA | 199150 | HTML/cheerio + eJobs | [↗](https://github.com/sebiboga/farmec-sa-nodejs-scraper) | [↗](https://sebiboga.github.io/farmec-sa-nodejs-scraper/) |
 | 15 | **CONNATIX** | CONNATIX NATIVE EXCHANGE ROMANIA SRL | 35861771 | Greenhouse API (JSON fetch) | [↗](https://github.com/sebiboga/connatix-native-exchange-romania-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/connatix-native-exchange-romania-srl-nodejs-scraper/) |
+| 16 | **METRO** | METRO CASH & CARRY ROMANIA SRL | 8119423 | HTML/cheerio | [↗](https://github.com/sebiboga/metro-cash-carry-romania-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/metro-cash-carry-romania-srl-nodejs-scraper/) |
 | 16 | **Cybertech** | CYBERTECH SRL | 12463238 | ANOFM API | [↗](https://github.com/sebiboga/cybertech-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/cybertech-srl-nodejs-scraper/) |
 | 17 | **ulmapackaging** | ULMA PACKAGING S.R.L. | 47978792 | TalentClue HTML (cheerio) + ANOFM API | [↗](https://github.com/sebiboga/ulma-packaging-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/ulma-packaging-srl-nodejs-scraper/) |
 
