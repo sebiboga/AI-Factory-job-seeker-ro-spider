@@ -239,6 +239,26 @@ grep -rl "EPAM\|epam-systems-international" ./$REPO_NAME --include="*.md" --incl
 
 **sed pitfalls:** Always verify after sed: `grep -rnE '\b[a-z]+\.[a-z]+[a-z]+\b' --include="*.js" .`
 
+### [V7b] `package.json` is customized for derived scraper
+
+**Check:**
+```bash
+PKG_NAME=$(jq -r '.name' ./$REPO_NAME/package.json 2>/dev/null)
+echo "$PKG_NAME" | grep -q "epam" && echo "HAS_EPAM" || echo "CUSTOMIZED"
+echo "$PKG_NAME" | grep -q "scraper-" && echo "HAS_SLUG" || echo "WRONG_SLUG"
+```
+
+**Fix if HAS_EPAM or WRONG_SLUG:** Set `name` to `scraper-<brand>-ro` (lowercase, hyphenated) and `version` to `1.0.0`.
+
+### [V7c] `delete_request.json` uses old CIF
+
+**Check:**
+```bash
+jq -r '.delete.query' ./$REPO_NAME/delete_request.json | grep -q "$TARGET_CIF" && echo "CORRECT" || echo "WRONG_CIF"
+```
+
+**Fix if WRONG_CIF:** Update the CIF in the query string.
+
 ### [V8] CI workflow is properly configured
 
 **Check:**
@@ -419,6 +439,11 @@ git pull origin main --rebase -X theirs && git push
 | Pages already enabled | Skip — will get 422, which is fine |
 | "Generated from" badge missing | Delete and recreate with `--template` flag (save any customizations first) |
 | Repo has no changes to commit | Skip commit step — nothing was missing |
+| GitHub API/DNS intermittent | Retry `gh` commands with 10s backoff; use `sleep 5` between retries |
+| `config/company.json` has EPAM-specific fields (`apiCountryId`) | Strip EPAM-specific fields; keep only fields matching the template that config/company.js expects |
+| Career page is WordPress/Elementor | Use cheerio to parse HTML h2/h3 tags for job titles; jobs may be in meta description or Elementor sections |
+| Multiple scrapers being derived simultaneously | Check that EPAM template derived list doesn't have duplicates; use unique CIF for each |
+| Package version was >1.0.0 from EPAM template | Reset to 1.0.0 for derived scrapers — they start fresh |
 
 ---
 
