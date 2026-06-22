@@ -312,6 +312,22 @@
       "pagesUrl": "https://sebiboga.github.io/ulma-packaging-srl-nodejs-scraper/",
       "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
       "updatedAt": "2026-06-21T07:34:32Z"
+    },
+    {
+      "repo": "stefanini-romania-srl-nodejs-scraper",
+      "url": "https://github.com/sebiboga/stefanini-romania-srl-nodejs-scraper",
+      "description": "STEFANINI ROMANIA SRL (CIF: 16139707)",
+      "cif": "16139707",
+      "legalName": "STEFANINI ROMANIA SRL",
+      "brand": "STEFANINI",
+      "careerUrl": "https://jobs2.smartsearchonline.com/StefaniniEMEA/jobs/process_jobsearch.asp?country=Romania",
+      "website": "https://www.stefanini.com",
+      "scrapingMethod": "SmartSearchOnline HTML (cheerio)",
+      "isTemplate": false,
+      "hasWorkflow": true,
+      "pagesUrl": "https://sebiboga.github.io/stefanini-romania-srl-nodejs-scraper/",
+      "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
+      "updatedAt": "2026-06-22T06:55:00Z"
     }
   ]
 }
