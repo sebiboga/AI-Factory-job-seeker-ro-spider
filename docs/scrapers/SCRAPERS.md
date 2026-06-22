@@ -4,7 +4,7 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 
 **Template sursă:** [epam-systems-international-srl-nodejs-scraper](https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper) (CIF: 33159615, brand: EPAM)  
 **AI Factory:** [AI-Factory-job-seeker-ro-spider](https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider)  
-**Ultima actualizare:** 2026-06-22
+**Ultima actualizare:** 2026-06-22T09:37:00Z
 
 ---
 
@@ -32,7 +32,9 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 | 16 | **Cybertech** | CYBERTECH SRL | 12463238 | ANOFM API | [↗](https://github.com/sebiboga/cybertech-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/cybertech-srl-nodejs-scraper/) |
 | 17 | **ulmapackaging** | ULMA PACKAGING S.R.L. | 47978792 | TalentClue HTML (cheerio) + ANOFM API | [↗](https://github.com/sebiboga/ulma-packaging-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/ulma-packaging-srl-nodejs-scraper/) |
 
-**Total derivate active: 17** (16 create din template cu badge "Generated from EPAM" + 1 pre-exista configurat manual)
+| 18 | **Qualitest** | QUALITEST DC RO S.R.L. | 39814543 | Workable JSON API | [↗](https://github.com/sebiboga/qualitest-dc-ro-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/qualitest-dc-ro-srl-nodejs-scraper/) |
+
+**Total derivate active: 18** (17 create din template cu badge "Generated from EPAM" + 1 pre-exista configurat manual)
 
 ---
 

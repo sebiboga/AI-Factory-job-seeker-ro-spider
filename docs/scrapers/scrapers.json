@@ -5,7 +5,7 @@
     "templateRepo": "https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper",
     "templateCif": "33159615",
     "factoryRepo": "https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider",
-    "lastUpdated": "2026-06-22"
+    "lastUpdated": "2026-06-22T09:37:00Z"
   },
   "scrapers": [
     {
@@ -328,6 +328,22 @@
       "pagesUrl": "https://sebiboga.github.io/stefanini-romania-srl-nodejs-scraper/",
       "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
       "updatedAt": "2026-06-22T06:55:00Z"
+    },
+    {
+      "repo": "qualitest-dc-ro-srl-nodejs-scraper",
+      "url": "https://github.com/sebiboga/qualitest-dc-ro-srl-nodejs-scraper",
+      "description": "QUALITEST DC RO S.R.L. (CIF: 39814543)",
+      "cif": "39814543",
+      "legalName": "QUALITEST DC RO S.R.L.",
+      "brand": "Qualitest",
+      "careerUrl": "https://apply.workable.com/qualitest-1/",
+      "website": "https://www.qualitestgroup.com",
+      "scrapingMethod": "Workable JSON API",
+      "isTemplate": false,
+      "hasWorkflow": true,
+      "pagesUrl": "https://sebiboga.github.io/qualitest-dc-ro-srl-nodejs-scraper/",
+      "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
+      "updatedAt": "2026-06-22T09:37:00Z"
     }
   ]
 }
