@@ -5,7 +5,7 @@
     "templateRepo": "https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper",
     "templateCif": "33159615",
     "factoryRepo": "https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider",
-    "lastUpdated": "2026-06-22T13:27:14Z"
+    "lastUpdated": "2026-06-26"
   },
   "scrapers": [
     {
@@ -359,6 +359,22 @@
       "pagesUrl": "https://sebiboga.github.io/west-co-impex-srl-nodejs-scraper/",
       "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
       "updatedAt": "2026-06-22T13:27:14Z"
+    },
+    {
+      "repo": "lseg-nodejs-scraper",
+      "url": "https://github.com/sebiboga/lseg-nodejs-scraper",
+      "description": "LSEG BUSINESS SERVICES RM S.R.L. (CIF: 39176747)",
+      "cif": "39176747",
+      "legalName": "LSEG BUSINESS SERVICES RM S.R.L.",
+      "brand": "LSEG",
+      "careerUrl": "https://lseg.wd3.myworkdayjobs.com/en-US/Careers",
+      "website": "https://www.lseg.com",
+      "scrapingMethod": "Workday JSON API",
+      "isTemplate": false,
+      "hasWorkflow": true,
+      "pagesUrl": "https://sebiboga.github.io/lseg-nodejs-scraper/",
+      "derivedFrom": "epam-systems-international-srl-nodejs-scraper",
+      "updatedAt": "2026-06-26T13:00:32Z"
     }
   ]
 }

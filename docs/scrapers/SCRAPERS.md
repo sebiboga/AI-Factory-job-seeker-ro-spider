@@ -4,7 +4,7 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 
 **Template sursă:** [epam-systems-international-srl-nodejs-scraper](https://github.com/sebiboga/epam-systems-international-srl-nodejs-scraper) (CIF: 33159615, brand: EPAM)  
 **AI Factory:** [AI-Factory-job-seeker-ro-spider](https://github.com/sebiboga/AI-Factory-job-seeker-ro-spider)  
-**Ultima actualizare:** 2026-06-22T09:37:00Z
+**Ultima actualizare:** 2026-06-26T12:55:00Z
 
 ---
 
@@ -33,8 +33,9 @@ Toate scraper-ele Node.js derivate din template-ul EPAM pentru peviitor.ro.
 | 17 | **ulmapackaging** | ULMA PACKAGING S.R.L. | 47978792 | TalentClue HTML (cheerio) + ANOFM API | [↗](https://github.com/sebiboga/ulma-packaging-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/ulma-packaging-srl-nodejs-scraper/) |
 
 | 18 | **Qualitest** | QUALITEST DC RO S.R.L. | 39814543 | Workable JSON API | [↗](https://github.com/sebiboga/qualitest-dc-ro-srl-nodejs-scraper) | [↗](https://sebiboga.github.io/qualitest-dc-ro-srl-nodejs-scraper/) |
+| 19 | **LSEG** | LSEG BUSINESS SERVICES RM S.R.L. | 39176747 | Workday JSON API | [↗](https://github.com/sebiboga/lseg-nodejs-scraper) | [↗](https://sebiboga.github.io/lseg-nodejs-scraper/) |
 
-**Total derivate active: 18** (17 create din template cu badge "Generated from EPAM" + 1 pre-exista configurat manual)
+**Total derivate active: 19** (18 create din template cu badge "Generated from EPAM" + 1 pre-exista configurat manual)
 
 ---
 
